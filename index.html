@@ -2,73 +2,71 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Bannière TikTok Live</title>
+    <title>Bannière TikTok Fine Haut</title>
     <style>
-        /* Importation d'une police moderne et lisible */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+        /* Importation d'une police moderne, fine et lisible */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
 
-        /* 1. Rendre le fond du site transparent pour OBS/TikTok */
+        /* 1. Fond transparent global et placement en HAUT */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: transparent; /* Fond invisible */
-            overflow: hidden; /* Cache ce qui dépasse */
+            background-color: transparent; /* Invisible */
+            overflow: hidden;
             height: 100%;
+            width: 100%;
             display: flex;
-            align-items: flex-end; /* Place la bannière en bas (changeable) */
+            align-items: flex-start; /* <--- ALIGNEMENT EN HAUT */
         }
 
-        /* 2. Le conteneur de la bannière */
+        /* 2. Le conteneur de la bannière FINE */
         .banner-container {
             width: 100%;
-            /* Dégradé couleurs froides (Bleu profond vers Cyan/Violet) */
-            background: linear-gradient(90deg, rgba(2,0,36,0.9) 0%, rgba(9,9,121,0.9) 35%, rgba(0,212,255,0.9) 100%);
-            /* Bordure brillante effet "Glace" */
-            border-top: 2px solid #00d4ff;
-            border-bottom: 2px solid #00d4ff;
-            /* Ombre portée (Glow) */
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            /* Dégradé couleurs froides plus transparent pour la discrétion (0.7) */
+            background: linear-gradient(90deg, rgba(2,0,36,0.7) 0%, rgba(9,9,121,0.7) 35%, rgba(0,212,255,0.7) 100%);
+            /* Bordure très fine en bas uniquement */
+            border-bottom: 1px solid rgba(0, 212, 255, 0.8);
+            /* Ombre portée ("Glow") plus subtile */
+            box-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
             
-            padding: 15px 0; /* Hauteur de la bande */
-            white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+            padding: 4px 0; /* <--- HAUTEUR TRÈS FINE (padding réduit) */
+            white-space: nowrap;
             position: relative;
+            /* Flou d'arrière-plan pour un effet "verre glacé" moderne (marche sur certains navigateurs OBS) */
+            backdrop-filter: blur(2px); 
         }
 
         /* 3. La piste qui bouge */
         .scrolling-text {
             display: inline-block;
-            /* Animation fluide */
-            animation: scroll 20s linear infinite; 
+            /* Vitesse ajustée pour la nouvelle taille (plus lent car plus petit) */
+            animation: scroll 25s linear infinite; 
         }
 
-        /* 4. Le style du texte */
+        /* 4. Le style du texte (plus petit) */
         .scrolling-text span {
             font-family: 'Montserrat', sans-serif;
-            font-size: 28px; /* Taille du texte */
-            color: #ffffff;
+            font-size: 16px; /* <--- TAILLE DE POLICE RÉDUITE pour finesse */
+            color: #e6f7ff; /* Blanc cassé légèrement bleuté pour moins agresser l'oeil */
             text-transform: uppercase;
-            font-weight: 800;
-            margin-right: 50px; /* Espace entre les répétitions */
-            /* Petit effet d'ombre sur le texte pour lisibilité */
-            text-shadow: 2px 2px 4px #000000;
+            font-weight: 600; /* Un peu moins gras pour faire plus fin */
+            margin-right: 40px; /* Espace entre les répétitions */
+            /* Ombre portée nette pour la lisibilité sur fond clair ou foncé */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
             vertical-align: middle;
+            letter-spacing: 1px; /* Espacement léger des lettres pour l'élégance */
         }
 
-        /* Ajout d'une icône Discord stylisée (optionnel, via CSS pur ou caractère) */
+        /* Mise en avant du mot Discord */
         .discord-highlight {
-            color: #5865F2; /* Couleur officielle Discord */
-            text-shadow: 0 0 5px rgba(88, 101, 242, 0.8);
+            color: #5865F2;
+            font-weight: 800; /* Le mot clé reste bien gras */
         }
 
-        /* 5. L'animation clé */
+        /* 5. L'animation de boucle parfaite */
         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                /* On déplace de -50% car j'ai doublé le contenu dans le HTML */
-                transform: translateX(-50%);
-            }
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
     </style>
 </head>
@@ -77,14 +75,19 @@
     <div class="banner-container">
         <div class="scrolling-text">
             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-            <span>🔷</span> <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-            <span>🔷</span>
+            <span>🔹</span>
+            
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔹</span>
 
              <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-             <span>🔷</span>
+             <span>🔹</span>
              
              <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-             <span>🔷</span>
+             <span>🔹</span>
+             
+             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+             <span>🔹</span>
         </div>
     </div>
 
