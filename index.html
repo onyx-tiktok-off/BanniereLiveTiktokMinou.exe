@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Bannière TikTok Live</title>
+    <style>
+        /* Importation d'une police moderne et lisible */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+        /* 1. Rendre le fond du site transparent pour OBS/TikTok */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: transparent; /* Fond invisible */
+            overflow: hidden; /* Cache ce qui dépasse */
+            height: 100%;
+            display: flex;
+            align-items: flex-end; /* Place la bannière en bas (changeable) */
+        }
+
+        /* 2. Le conteneur de la bannière */
+        .banner-container {
+            width: 100%;
+            /* Dégradé couleurs froides (Bleu profond vers Cyan/Violet) */
+            background: linear-gradient(90deg, rgba(2,0,36,0.9) 0%, rgba(9,9,121,0.9) 35%, rgba(0,212,255,0.9) 100%);
+            /* Bordure brillante effet "Glace" */
+            border-top: 2px solid #00d4ff;
+            border-bottom: 2px solid #00d4ff;
+            /* Ombre portée (Glow) */
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+            
+            padding: 15px 0; /* Hauteur de la bande */
+            white-space: nowrap; /* Empêche le texte de revenir à la ligne */
+            position: relative;
+        }
+
+        /* 3. La piste qui bouge */
+        .scrolling-text {
+            display: inline-block;
+            /* Animation fluide */
+            animation: scroll 20s linear infinite; 
+        }
+
+        /* 4. Le style du texte */
+        .scrolling-text span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px; /* Taille du texte */
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-right: 50px; /* Espace entre les répétitions */
+            /* Petit effet d'ombre sur le texte pour lisibilité */
+            text-shadow: 2px 2px 4px #000000;
+            vertical-align: middle;
+        }
+
+        /* Ajout d'une icône Discord stylisée (optionnel, via CSS pur ou caractère) */
+        .discord-highlight {
+            color: #5865F2; /* Couleur officielle Discord */
+            text-shadow: 0 0 5px rgba(88, 101, 242, 0.8);
+        }
+
+        /* 5. L'animation clé */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                /* On déplace de -50% car j'ai doublé le contenu dans le HTML */
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="banner-container">
+        <div class="scrolling-text">
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔷</span> <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔷</span>
+
+             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+             <span>🔷</span>
+             
+             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+             <span>🔷</span>
+        </div>
+    </div>
+
+</body>
+</html>
