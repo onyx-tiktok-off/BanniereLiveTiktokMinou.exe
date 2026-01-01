@@ -2,68 +2,61 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Bannière TikTok Fine Haut</title>
+    <title>Bannière Ultra Slim</title>
     <style>
-        /* Importation d'une police moderne, fine et lisible */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-        /* 1. Fond transparent global et placement en HAUT */
         body, html {
             margin: 0;
             padding: 0;
-            background-color: transparent; /* Invisible */
+            background-color: transparent;
             overflow: hidden;
             height: 100%;
             width: 100%;
             display: flex;
-            align-items: flex-start; /* <--- ALIGNEMENT EN HAUT */
+            align-items: flex-start; /* Collé tout en haut */
         }
 
-        /* 2. Le conteneur de la bannière FINE */
         .banner-container {
             width: 100%;
-            /* Dégradé couleurs froides plus transparent pour la discrétion (0.7) */
-            background: linear-gradient(90deg, rgba(2,0,36,0.7) 0%, rgba(9,9,121,0.7) 35%, rgba(0,212,255,0.7) 100%);
-            /* Bordure très fine en bas uniquement */
-            border-bottom: 1px solid rgba(0, 212, 255, 0.8);
-            /* Ombre portée ("Glow") plus subtile */
-            box-shadow: 0 2px 10px rgba(0, 212, 255, 0.3);
+            /* Fond très transparent pour ne pas masquer l'écran (0.6) */
+            background: linear-gradient(90deg, rgba(2,0,36,0.6) 0%, rgba(9,9,121,0.6) 35%, rgba(0,212,255,0.6) 100%);
+            /* Bordure quasi invisible mais présente pour définir la ligne */
+            border-bottom: 1px solid rgba(0, 212, 255, 0.5);
             
-            padding: 4px 0; /* <--- HAUTEUR TRÈS FINE (padding réduit) */
+            /* HAUTEUR MINIMALE : Padding de 2px seulement */
+            padding: 2px 0; 
+            
             white-space: nowrap;
             position: relative;
-            /* Flou d'arrière-plan pour un effet "verre glacé" moderne (marche sur certains navigateurs OBS) */
-            backdrop-filter: blur(2px); 
+            box-shadow: 0 1px 5px rgba(0, 212, 255, 0.2);
         }
 
-        /* 3. La piste qui bouge */
         .scrolling-text {
             display: inline-block;
-            /* Vitesse ajustée pour la nouvelle taille (plus lent car plus petit) */
-            animation: scroll 25s linear infinite; 
+            /* Animation un peu plus lente car le texte est petit (plus dur à lire si trop vite) */
+            animation: scroll 30s linear infinite; 
         }
 
-        /* 4. Le style du texte (plus petit) */
         .scrolling-text span {
             font-family: 'Montserrat', sans-serif;
-            font-size: 16px; /* <--- TAILLE DE POLICE RÉDUITE pour finesse */
-            color: #e6f7ff; /* Blanc cassé légèrement bleuté pour moins agresser l'oeil */
+            /* TAILLE CRITIQUE : 12px est le minimum lisible sur téléphone */
+            font-size: 12px; 
+            color: #ffffff;
             text-transform: uppercase;
-            font-weight: 600; /* Un peu moins gras pour faire plus fin */
-            margin-right: 40px; /* Espace entre les répétitions */
-            /* Ombre portée nette pour la lisibilité sur fond clair ou foncé */
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-weight: 700; /* Très gras pour compenser la petite taille */
+            margin-right: 40px;
+            /* Ombre portée légère pour détacher le texte du fond */
+            text-shadow: 1px 1px 1px rgba(0,0,0,1);
             vertical-align: middle;
-            letter-spacing: 1px; /* Espacement léger des lettres pour l'élégance */
+            letter-spacing: 1px;
         }
 
-        /* Mise en avant du mot Discord */
         .discord-highlight {
-            color: #5865F2;
-            font-weight: 800; /* Le mot clé reste bien gras */
+            color: #00e5ff; /* Cyan très pétant pour ressortir en petit */
+            font-weight: 800;
         }
 
-        /* 5. L'animation de boucle parfaite */
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -76,18 +69,16 @@
         <div class="scrolling-text">
             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
             <span>🔹</span>
-            
             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
             <span>🔹</span>
-
-             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-             <span>🔹</span>
-             
-             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-             <span>🔹</span>
-             
-             <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
-             <span>🔹</span>
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔹</span>
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔹</span>
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔹</span>
+            <span>N'hésitez pas à rejoindre mon <span class="discord-highlight">discord communautaire</span> , lien cliquable dans ma bio !!</span>
+            <span>🔹</span>
         </div>
     </div>
 
